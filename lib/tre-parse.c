@@ -1482,7 +1482,7 @@ tre_parse(tre_parse_ctx_t *ctx)
 			{
 			  if (ctx->re[0] == CHAR_RBRACE)
 			    break;
-			  if (tre_isxdigit(ctx->re[0]))
+			  if (i < 32 && tre_isxdigit(ctx->re[0]))
 			    {
 			      tmp[i] = (char)ctx->re[0];
 			      i++;
