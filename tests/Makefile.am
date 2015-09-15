@@ -2,7 +2,7 @@
 
 SUBDIRS = agrep
 
-check_PROGRAMS = retest randtest test-str-source
+check_PROGRAMS = retest randtest fuzztest test-str-source
 EXTRA_PROGRAMS = bench
 LDADD = $(LTLIBINTL)
 
@@ -14,6 +14,9 @@ wretest_CPPFLAGS = -DWRETEST $(AM_CPPFLAGS)
 endif TRE_MULTIBYTE
 
 randtest_SOURCES = randtest.c
+
+fuzztest_SOURCES = fuzztest.c
+fuzztest_LDADD = ../lib/libtre.la $(LDADD)
 
 bench_SOURCES = bench.c
 bench_LDADD = ../lib/libtre.la $(LDADD) -lm
